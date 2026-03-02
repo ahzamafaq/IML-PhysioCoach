@@ -1,0 +1,484 @@
+/**
+ * IML PhysioCoach — Polished Light Mode Theme
+ * Clean, modern aesthetic with tight spacing and premium feel
+ */
+
+/* ========== Import Google Font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ========== CSS Variables / Design Tokens ========== */
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #f0f2f5;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f9fa;
+
+  /* Brand Blue Accent */
+  --accent-primary: #4361ee;
+  --accent-hover: #3a56d4;
+  --accent-active: #2f47b3;
+  --accent-light: #dbe4ff;
+
+  /* Semantic */
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --info: #3498db;
+
+  /* Text Colors */
+  --text-heading: #1a1a2e;
+  --text-body: #4a4a68;
+  --text-muted: #8e8ea0;
+
+  /* Borders & Dividers */
+  --border-color: #e4e7ec;
+  --border-light: #f0f1f3;
+
+  /* Shadows - Layered depth */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 2px 6px rgba(67, 97, 238, 0.25);
+  --shadow-button-hover: 0 6px 16px rgba(67, 97, 238, 0.35);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.3;
+
+  /* Spacing */
+  --card-gap: 1rem;
+  --card-padding: 20px;
+  --page-padding: 2rem;
+}
+
+/* ========== Global Styles ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-body) !important;
+  font-family: var(--font-family) !important;
+  line-height: var(--line-height-base) !important;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== Marcelle Dashboard Override ========== */
+.marcelle-dashboard {
+  background-color: var(--bg-primary) !important;
+}
+
+/* ========== Header — Gradient Bar ========== */
+.marcelle-dashboard-header {
+  background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%) !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(67, 97, 238, 0.3) !important;
+  padding: 1rem 2rem !important;
+}
+
+.marcelle-dashboard-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1.4rem !important;
+  letter-spacing: -0.5px;
+}
+
+.marcelle-dashboard-author {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.8rem !important;
+}
+
+/* ========== Footer ========== */
+.marcelle-dashboard-footer,
+footer {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem !important;
+  text-align: right !important;
+  padding: 1rem 2rem !important;
+  border-top: 1px solid var(--border-light) !important;
+}
+
+.marcelle-dashboard-footer::before,
+footer::before {
+  content: '© 2026 IML PhysioCoach' !important;
+  visibility: visible !important;
+}
+
+.marcelle-dashboard-footer *,
+footer * {
+  visibility: hidden !important;
+}
+
+/* ========== Navigation Tabs ========== */
+.marcelle-dashboard-tabs {
+  background-color: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  display: flex;
+  gap: 0;
+  padding: 0 2rem !important;
+  box-shadow: var(--shadow-xs) !important;
+}
+
+.marcelle-dashboard-tab {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  color: var(--text-muted) !important;
+  cursor: pointer;
+  font-family: var(--font-family) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  padding: 0.85rem 1.25rem !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.marcelle-dashboard-tab:hover {
+  color: var(--text-heading) !important;
+  background-color: rgba(67, 97, 238, 0.04) !important;
+}
+
+.marcelle-dashboard-tab.active,
+.marcelle-dashboard-tab[aria-selected="true"] {
+  border-bottom-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* ========== Page Content ========== */
+.marcelle-dashboard-page {
+  background-color: var(--bg-primary) !important;
+  padding: var(--page-padding) !important;
+  min-height: calc(100vh - 120px);
+}
+
+/* ========== Compact Card System ========== */
+.marcelle-text-component,
+.marcelle-component {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--shadow-card) !important;
+  color: var(--text-body) !important;
+  margin-bottom: var(--card-gap) !important;
+  padding: var(--card-padding) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+
+.marcelle-text-component:hover {
+  box-shadow: var(--shadow-card-hover) !important;
+  transform: translateY(-1px);
+}
+
+.marcelle-text-component .marcelle-component-title {
+  color: var(--text-heading) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: var(--line-height-heading) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Text content */
+.marcelle-text-component p,
+.marcelle-text-component div {
+  color: var(--text-body) !important;
+  line-height: var(--line-height-base) !important;
+  white-space: pre-line !important;
+}
+
+/* ========== Buttons — Gradient style ========== */
+.marcelle-button,
+button.marcelle-component {
+  background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-button) !important;
+  color: white !important;
+  cursor: pointer !important;
+  font-family: var(--font-family) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  min-height: 44px !important;
+  padding: 0.75rem 1.75rem !important;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease !important;
+}
+
+.marcelle-button:hover,
+button.marcelle-component:hover {
+  box-shadow: var(--shadow-button-hover) !important;
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.marcelle-button:active,
+button.marcelle-component:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-xs) !important;
+}
+
+/* ========== Webcam — Premium Frame ========== */
+.marcelle-webcam {
+  background-color: var(--bg-card) !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-card) !important;
+  padding: 6px !important;
+  position: relative !important;
+}
+
+.marcelle-webcam video {
+  border-radius: 12px !important;
+  display: block;
+  width: 100% !important;
+}
+
+.marcelle-webcam canvas {
+  border-radius: 12px !important;
+}
+
+/* ========== Toggle — Compact ========== */
+.marcelle-toggle {
+  background-color: var(--bg-card) !important;
+  border-radius: 10px !important;
+  padding: 1rem 1.25rem !important;
+}
+
+.marcelle-toggle input[type="checkbox"] {
+  accent-color: var(--accent-primary) !important;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+.marcelle-toggle label {
+  color: var(--text-heading) !important;
+  cursor: pointer;
+  font-weight: 500 !important;
+  margin-left: 0.75rem;
+  font-size: 0.9rem !important;
+}
+
+/* ========== Text Input ========== */
+.marcelle-text-input input {
+  background-color: var(--bg-surface) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 10px !important;
+  color: var(--text-heading) !important;
+  font-family: var(--font-family) !important;
+  font-size: 0.95rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+}
+
+.marcelle-text-input input:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px var(--accent-light) !important;
+  outline: none !important;
+}
+
+.marcelle-text-input input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* ========== Dataset Browser ========== */
+.marcelle-dataset-browser {
+  background-color: var(--bg-card) !important;
+  border-radius: 14px !important;
+  padding: var(--card-padding) !important;
+}
+
+.marcelle-dataset-browser .marcelle-component-title {
+  color: var(--text-heading) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+.marcelle-dataset-browser-item {
+  background-color: var(--bg-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 10px !important;
+  margin-bottom: 0.75rem !important;
+  padding: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.marcelle-dataset-browser-item:hover {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.marcelle-dataset-browser img {
+  border-radius: 8px !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+/* ========== Sidebar ========== */
+.marcelle-dashboard-sidebar {
+  background-color: var(--bg-surface) !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 1.5rem !important;
+}
+
+/* ========== Component Titles ========== */
+.marcelle-component-title {
+  color: var(--text-heading) !important;
+  font-family: var(--font-family) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.75rem !important;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ========== Spacing ========== */
+.marcelle-dashboard-page>* {
+  margin-bottom: var(--card-gap);
+}
+
+.marcelle-dashboard-page>*:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 1rem;
+    --card-padding: 16px;
+    --card-gap: 0.75rem;
+  }
+
+  .marcelle-button,
+  button.marcelle-component {
+    min-height: 40px !important;
+    font-size: 0.85rem !important;
+    padding: 0.6rem 1.25rem !important;
+  }
+
+  .marcelle-dashboard-tabs {
+    padding: 0 0.75rem !important;
+    overflow-x: auto;
+  }
+
+  .marcelle-dashboard-tab {
+    font-size: 0.8rem !important;
+    padding: 0.7rem 0.9rem !important;
+    white-space: nowrap;
+  }
+}
+
+/* ========== Print ========== */
+@media print {
+  body {
+    background-color: white !important;
+  }
+
+  .marcelle-text-component,
+  .marcelle-component {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-green {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+}
+
+@keyframes pulse-red {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Analytics chart */
+#prediction-history-chart {
+  display: block;
+  width: 100% !important;
+  max-height: 300px;
+  margin-top: 0.75rem;
+}
+
+/* Inline buttons in text components */
+.marcelle-text-component button {
+  font-family: var(--font-family) !important;
+  transition: all 0.2s ease !important;
+}
+
+.marcelle-text-component button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ========== Settings gear icon ========== */
+.marcelle-dashboard-settings {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.marcelle-dashboard-settings:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
